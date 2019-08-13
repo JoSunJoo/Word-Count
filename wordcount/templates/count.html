@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
+  {% extends 'base.html' %}
   <body>
-    <h2>당신이 입력한 텍스트는 {{ total }} 단어로 구성되어 있습니다.</h2>
 
-    <a href="{% url 'home' %}">다시 입력하기</a>
-
-    <h2>입력한 텍스트 : </h2>
-    {{ fulltext }}
-
-    <h2>단어 카운트 : </h2>
-    {% for word, countTotal in dictionary %}
-      {{ word }} - {{ countTotal }}
+    {% block contents %}
+      <div class="alert alert-danger">
+        <h2>당신이 입력한 텍스트는 총 <strong>{{ total }}</strong> 단어로 구성되어 있습니다.</h2>
+      </div>
+      <br><br>
+      <!-- card1 -->
+      <div class=" card">
+        <div class="card-header">
+          <h5> 입력한 원본 </h5>
+        </div>
+        <div class="card-body">
+          {{ fulltext }}
+        </div>
+      </div>
       <br>
-    {% endfor %}
 
+      <!-- card2 -->
+      <div class=" card">
+        <div class="card-header">
+          <h5> 단어 - 횟수 </h5>
+        </div>
+        <div class="card-body">
+          {% for word, countTotal in dictionary %}
+            {{ word }} : {{ countTotal }}
+            <br>
+          {% endfor %}
+        </div>
+      </div>
+      <br>
+
+      <!-- reset Button -->
+      <a href="{% url 'home' %}" class="btn btn-secondary fas fa-angle-double-right" role="button" style="float:right;">다시 입력하기</a>
+    {% endblock %}
   </body>
 </html>
