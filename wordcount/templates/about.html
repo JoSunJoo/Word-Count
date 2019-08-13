@@ -1,10 +1,26 @@
 <!DOCTYPE HTML>
 <html>
+  {% extends 'base.html' %}
   <body>
-    <h2>ABOUT</h2>
+    {% block contents %}
+      <h2 style="color: #6F4285;">ABOUT</h2>
+      <br>
+      <div class="container bg-light">
+        <br>
+        <pre class="text-dark" style="text-align: center; font-size: larger;">
 
-    <p>컴퓨터공학부 16학번 조선주가 만든 프로그램입니다. </p>
-    <p>단어를 세주는 프로그램이죠ㅎㅎ</p>
-    <a href="{% url "home" %}">home으로 돌아가기</a>
+
+이 프로그램은 문장을 입력했을 때, 총 단어의 갯수와 각 단어 별 빈도를 계산하여 출력해주는 프로그램입니다.
+Django를 활용하여 프로그램을 만들었으며,Bootstrap을 활용하여 디자인을 했습니다.
+
+처음 만들어본 프로젝트인 만큼 기능 위주보다,
+Django의 흐름에 맞추어 프로젝트를 진행하였습니다.
+
+        </pre>
+        <br>
+      </div>
+      <br>
+      <a href="{% url "home" %}">home으로 돌아가기</a>
+    {% endblock %}
   </body>
 </html>
