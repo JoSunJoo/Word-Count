@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  {% extends 'base.html' %}
+  <body>
+  {% block contents %}
+
+      <h1 style="color: #6F4285;"> Word Count</h1>
+      <br>
+      <form action="{% url 'count' %}" style="display: grid;">
+        <textarea name="fulltext" rows="10" ></textarea>
+        <br>
+        <input type="submit" value="Count" class="btn btn-secondary" />
+      </form>
+
+    {% endblock %}
+  </body>
+</html>
